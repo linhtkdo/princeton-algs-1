@@ -26,10 +26,12 @@ public class ArrayListCustom<E>
       throw new IndexOutofBoundsException("Index: " + index + ", Size: " + index);
     
     Object item = a[index];
-    for (int i=index; i<N; i++)
-      a[i] = a[i+1];
+    for (int i=index; i<N; i++) a[i] = a[i+1];
     N--;
     
     return item;
   }
+  
+  private void resize()
+  { a = Arrays.copyOf(a, a.length * 2); }
 }
